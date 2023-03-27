@@ -1,40 +1,39 @@
-function validaSeOChutePossuiUmValorValido(chute) {
-    const numero =+ chute;  
+function verificaSeOChutePossuiUmValorValido(chute) {
+    const numero = +chute
 
     if (chuteForInvalido(numero)) {
-        elementoChute.innerHTML += '<div> Valor Inválido </div>';
-        return;
+        elementoChute.innerHTML += '<div>Valor inválido</div>'
+        return
     }
-    
+
     if (numeroForMaiorOuMenorQueOValorPermitido(numero)) {
         elementoChute.innerHTML += `
-        <div> Valor inválido: fale um número entre 
-        ${menorValor} e ${maiorValor} </div>
+        <div>Valor inválido: Fale um número entre ${menorValor} e ${maiorValor}</div>
         `
-        return;
+        return
     }
 
     if (numero === numeroSecreto) {
         document.body.innerHTML = `
-        <h1> Você Acertou!!! </h1>
-        <h3> O Numero Secreto era o ${numeroSecreto} </h3>
+            <h2>Você acertou!</h2>
+            <h3>O número secreto era ${numeroSecreto}</h3>
         `
     } else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
-        <div>O numero secreto é menor <i class="fa-solid fa-arrow-down"></i></div>
-        `        
+        <div>O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
+        `
     } else {
         elementoChute.innerHTML += `
-        <div>O numero secreto é maior <i class="fa-solid fa-arrow-up"></i></div>
+        <div>O número secreto é maior <i class="fa-solid fa-up-long"></i></div>
         `
     }
+ 
 }
 
 function chuteForInvalido(numero) {
-    return Number.isNaN(numero);
+    return Number.isNaN(numero)
 }
 
-function numeroForMaiorOuMenorQueOValorPermitido(numero) {
-    return numero > maiorValor || numero < menorValor;
-    
+function numeroForMaiorOuMenorQueOValorPermitido(numero){
+    return numero > maiorValor || numero < menorValor
 }
