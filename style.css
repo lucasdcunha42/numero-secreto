@@ -40,3 +40,13 @@ h3 {
     padding: 10px 10px 0 10px;
     border: 2px double var(--primary-color);
 }
+
+.btn-jogar {
+    padding: 8px 12px;
+    border: 0;
+    background: var(--primary-color);
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: var(--bg-color);
+}
